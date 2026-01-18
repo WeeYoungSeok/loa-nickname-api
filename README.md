@@ -1,4 +1,4 @@
-# 🏹 Loa Nickname Search (Backend API)
+# 🔍 Loa Nickname Search (Backend API)
 
 > **"로스트아크 닉네임, 게임 접속 없이 API로 빠르게 검색하세요."**
 > Lost Ark Nickname Availability Check & Search API Service
@@ -43,8 +43,8 @@
 
 ```mermaid
 graph LR
-    A[Client (React/Web)] -- 1. 닉네임 검색 요청 --> B(Spring Boot API Server)
-    B -- 2. 실시간 가능 여부 확인 --> X{LostArk}
-    B -- 3. 검색 기록 저장 (Insert) --> C[(MySQL Database)]
-    C -- 4. 인기 검색어 조회 (Select) --> B
-    B -- 5. 결과 응답 (JSON) --> A
+    A[Client (React/Web)] -- "1. 닉네임 검색 요청" --> B(Spring Boot API Server)
+    B -- "2. 실시간 가능 여부 확인" --> X{LostArk}
+    B -- "3. 검색 기록 저장 (Insert)" --> C[(MySQL Database)]
+    C -- "4. 인기 검색어 조회 (Select)" --> B
+    B -- "5. 결과 응답 (JSON)" --> A
