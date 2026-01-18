@@ -43,8 +43,8 @@
 
 ```mermaid
 graph LR
-    A[Client (React/Web)] -- "1. 닉네임 검색 요청" --> B(Spring Boot API Server)
-    B -- "2. 실시간 가능 여부 확인" --> X{LostArk}
-    B -- "3. 검색 기록 저장 (Insert)" --> C[(MySQL Database)]
+    A["Client (React/Web)"] -- "1. 닉네임 검색 요청" --> B["Spring Boot API Server"]
+    B -- "2. 실시간 가능 여부 확인" --> X{"LostArk"}
+    B -- "3. 검색 기록 저장 (Insert)" --> C[("MySQL Database")]
     C -- "4. 인기 검색어 조회 (Select)" --> B
     B -- "5. 결과 응답 (JSON)" --> A
