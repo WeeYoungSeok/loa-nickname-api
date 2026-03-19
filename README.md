@@ -35,6 +35,9 @@
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![Github](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
+### Infrastructure & DevOps
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+
 <br>
 
 ## 4. 📐 System Architecture
@@ -45,6 +48,25 @@
 graph LR
     A["Client (React/Web)"] -- "1. 닉네임 검색 요청" --> B["Spring Boot API Server"]
     B -- "2. 실시간 가능 여부 확인" --> X{"LostArk"}
-    B -- "3. 검색 기록 저장 (Insert)" --> C[("MySQL Database")]
+    
+    subgraph Docker Environment
+        C[("MySQL Database")]
+    end
+    
+    B -- "3. 검색 기록 저장 (Insert)" --> C
     C -- "4. 인기 검색어 조회 (Select)" --> B
     B -- "5. 결과 응답 (JSON)" --> A
+```
+
+<br>
+
+## 5. 🚀 Getting Started (로컬 실행 방법)
+본 프로젝트는 로컬 DB 환경을 오염시키지 않기 위해 **Docker**를 사용하여 MySQL을 실행합니다.
+
+### Prerequisites
+- Docker Desktop 설치 필요
+
+### DB 실행 명령어
+```bash
+docker run --name loa-mysql -e MYSQL_ROOT_PASSWORD=1234 -d -p 3306:3306 mysql:8.0
+```
