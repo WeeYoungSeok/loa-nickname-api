@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: loa-nickname-api
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/loa_search?createDatabaseIfNotExist=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: update # ???(???)? ??? DB ???? ??? ??/??
+    show-sql: true # ???? ??? ??
+    properties:
+      hibernate:
+        format_sql: true # ??? ??? ??
