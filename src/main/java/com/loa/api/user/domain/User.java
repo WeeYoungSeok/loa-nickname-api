@@ -1,4 +1,4 @@
-package com.loa.api.domain;
+package com.loa.api.user.domain;
 
 import jakarta.persistence.*;
 import lombok.AccessLevel;
