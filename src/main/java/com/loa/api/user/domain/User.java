@@ -1,5 +1,6 @@
 package com.loa.api.user.domain;
 
+import com.loa.api.user.domain.constant.Role;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
@@ -25,11 +26,12 @@ public class User {
     @Column(nullable = false, unique = true, length = 50)
     private String nickname;
 
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private String role;
+    private Role role;
 
     @Builder
-    public User(String email, String password, String nickname, String role) {
+    public User(String email, String password, String nickname, Role role) {
         this.email = email;
         this.password = password;
         this.nickname = nickname;
