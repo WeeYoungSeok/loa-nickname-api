@@ -1,6 +1,7 @@
 package com.loa.api.user.dto.request;
 
 import com.loa.api.user.domain.User;
+import com.loa.api.user.domain.constant.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -28,6 +29,7 @@ public class UserSignupRequest {
                    .email(this.email)
                    .password(encodedPassword) // 🚨 쌩 비밀번호 말고, 밖에서 받아온 암호화된 비밀번호를 세팅!
                    .nickname(this.nickname)
+                   .role(Role.USER)
                    .build();
     }
 }
