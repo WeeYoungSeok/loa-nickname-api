@@ -1,5 +1,6 @@
 package com.loa.api.user.dto.request;
 
+import com.loa.api.user.domain.User;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -20,5 +21,13 @@ public class UserSignupRequest {
 
     @NotBlank(message = "닉네임은 필수 입력 값입니다.")
     @Size(min = 2, max = 10, message = "닉네임은 2자 이상 10자 이하로 입력해 주세요.")
-    private String nickName;
+    private String nickname;
+
+    public User toEntity(String encodedPassword) {
+        return User.builder()
+                   .email(this.email)
+                   .password(encodedPassword) // 🚨 쌩 비밀번호 말고, 밖에서 받아온 암호화된 비밀번호를 세팅!
+                   .nickname(this.nickname)
+                   .build();
+    }
 }
