@@ -32,4 +32,17 @@ class UserServiceTest {
             userService.validateDuplicateEmail(email);
         });
     }
+
+    @Test
+    @DisplayName("중복된 닉네임으로 가입을 시도하면 예외가 터져야 한다.")
+    void validateDuplicateNicknameTest() {
+        // given : 가짜 DB에게 홍길동이라는 이메일이 있냐고 물어본다.
+        String nickname = "홍길동";
+        given(userRepository.existsByNickname(nickname)).willReturn(true);
+
+        // when & then : UserService가 중복 검사를 했을 때, IllegalArgumentException 에러가 터져야 성공이다.
+        assertThrows(IllegalArgumentException.class, () -> {
+            userService.validateDuplicateNickname(nickname);
+        });
+    }
 }

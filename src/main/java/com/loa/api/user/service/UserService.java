@@ -18,6 +18,9 @@ public class UserService {
         // 이메일 중복 검사
         validateDuplicateEmail(request.getEmail());
 
+        // 닉네임 중복 검사
+        validateDuplicateNickname(request.getNickname());
+
         // 비밀번호 암호화
         String encodedPassword = passwordEncoder.encode((request.getPassword()));
 
@@ -31,6 +34,12 @@ public class UserService {
     public void validateDuplicateEmail(String email) {
         if (userRepository.existsByEmail(email)) {
             throw new IllegalArgumentException("중복된 이메일은 사용할 수 없습니다.");
+        }
+    }
+
+    public void validateDuplicateNickname(String nickname) {
+        if (userRepository.existsByNickname(nickname)) {
+            throw new IllegalArgumentException("중복된 닉네임은 사용할 수 없습니다.");
         }
     }
 }
