@@ -16,3 +16,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+# application.yml
+  profiles:
+    include: secret  # application-secret.yml을 끌어와서 합치겠다는 뜻!
