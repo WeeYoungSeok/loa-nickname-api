@@ -1,6 +1,8 @@
 package com.loa.api.user.controller;
 
+import com.loa.api.user.dto.request.UserLoginRequest;
 import com.loa.api.user.dto.request.UserSignupRequest;
+import com.loa.api.user.dto.response.UserLoginResponse;
 import com.loa.api.user.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
@@ -24,5 +26,11 @@ public class UserController {
     public ResponseEntity<String> signup(@Valid @RequestBody UserSignupRequest request) {
         userService.signup(request);
         return ResponseEntity.status(HttpStatus.CREATED).body("회원가입이 완료되었습니다.");
+    }
+
+    @Operation(summary = "로그인", description = "이메일 비밀번호를 확인 후 jwt 토큰을 발급")
+    @PostMapping("/login")
+    public ResponseEntity<UserLoginResponse> login(@Valid @RequestBody UserLoginRequest request) {
+        return ResponseEntity.status(HttpStatus.OK).body(userService.login(request));
     }
 }

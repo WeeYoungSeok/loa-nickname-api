@@ -35,3 +35,6 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# JWT Secret 등 민감한 환경변수 숨기기
+application-secret.yml
