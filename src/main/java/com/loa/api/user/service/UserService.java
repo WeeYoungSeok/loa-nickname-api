@@ -1,6 +1,6 @@
 package com.loa.api.user.service;
 
-import com.loa.api.common.JwtProvider;
+import com.loa.api.common.jwt.JwtProvider;
 import com.loa.api.user.domain.User;
 import com.loa.api.user.dto.request.UserLoginRequest;
 import com.loa.api.user.dto.request.UserSignupRequest;

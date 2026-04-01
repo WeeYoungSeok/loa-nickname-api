@@ -1,4 +1,4 @@
-package com.loa.api.common;
+package com.loa.api.common.jwt;
 
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
