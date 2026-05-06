@@ -7,7 +7,7 @@
 
 ## 1. 📅 프로젝트 개요
 - **프로젝트명:** Loawa Nickname Search (Backend)
-- **개발 기간:** 2026.01.19 ~ 진행 중
+- **개발 기간:** 2026.03 ~ 진행 중
 - **개발 인원:** 1인 (Back-end)
 - **포지션:** Backend API Developer
 
